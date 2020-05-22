@@ -1,0 +1,8 @@
+# ignore cookie 
+/cookies.txt
+
+# ignore downloaded picture
+/default_save/
+
+# ignore hiden folder
+/.idea
