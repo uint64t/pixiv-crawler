@@ -618,24 +618,28 @@ def resetAndReturnFilenameList(func):
     return decorator
 
 
+@resetAndReturnFilenameList
 def dl_tag(tag, pic_num, deep_into_manga=False, add_classname_in_path=True):
     ppp = getattr(config, "pic_per_page_" + "tag")
     classification = [("tag", [(tag, (pic_num + ppp - 1) // ppp)])]
     batch_download(classification, pic_num, deep_into_manga, add_classname_in_path)
 
 
+@resetAndReturnFilenameList
 def dl_artist(artist_id, pic_num, deep_into_manga=True, add_classname_in_path=True):
     ppp = getattr(config, "pic_per_page_" + "illustrator")
     classification = [("illustrator", [("?", artist_id, -1 if pic_num == -1 else ((pic_num + ppp - 1) // ppp))])]
     batch_download(classification, pic_num, deep_into_manga, add_classname_in_path)
 
 
+@resetAndReturnFilenameList
 def dl_bookmark(pic_num, deep_into_manga=True, add_classname_in_path=True):
     ppp = getattr(config, "pic_per_page_" + "bookmark")
     classification = [("bookmark", (pic_num + ppp - 1) // ppp)]
     batch_download(classification, pic_num, deep_into_manga, add_classname_in_path)
 
 
+@resetAndReturnFilenameList
 def dl_rank_global(pic_num, deep_into_manga=False, add_classname_in_path=True):
     ppp = getattr(config, "pic_per_page_" + "rank_global")
     classification = [("rank_global", 1)]
@@ -649,12 +653,14 @@ def dl_rank_daily(pic_num, deep_into_manga=False, add_classname_in_path=True):
     batch_download(classification, pic_num, deep_into_manga, add_classname_in_path)
 
 
+@resetAndReturnFilenameList
 def dl_rank_weekly(pic_num, deep_into_manga=False, add_classname_in_path=True):
     ppp = getattr(config, "pic_per_page_" + "rank_weekly")
     classification = [("rank_weekly", (pic_num + ppp - 1) // ppp)]
     batch_download(classification, pic_num, deep_into_manga, add_classname_in_path)
 
 
+@resetAndReturnFilenameList
 def dl_rank_original(pic_num, deep_into_manga=False, add_classname_in_path=True):
     ppp = getattr(config, "pic_per_page_" + "rank_original")
     classification = [("rank_original", (pic_num + ppp - 1) // ppp)]
@@ -668,18 +674,21 @@ def dl_rank_daily_r18(pic_num, deep_into_manga=False, add_classname_in_path=True
     batch_download(classification, pic_num, deep_into_manga, add_classname_in_path)
 
 
+@resetAndReturnFilenameList
 def dl_rank_male_r18(pic_num, deep_into_manga=False, add_classname_in_path=True):
     ppp = getattr(config, "pic_per_page_" + "rank_male_r18")
     classification = [("rank_male_r18", (pic_num + ppp - 1) // ppp)]
     batch_download(classification, pic_num, deep_into_manga, add_classname_in_path)
 
 
+@resetAndReturnFilenameList
 def dl_rank_weekly_r18(pic_num, deep_into_manga=False, add_classname_in_path=True):
     ppp = getattr(config, "pic_per_page_" + "rank_weekly_r18")
     classification = [("rank_daily", (pic_num + ppp - 1) // ppp)]
     batch_download(classification, pic_num, deep_into_manga, add_classname_in_path)
 
 
+@resetAndReturnFilenameList
 def dl_diy_urls(urls, pic_num, deep_into_manga=False, add_classname_in_path=True):
     if not isinstance(urls, list):
         urls = [urls]
