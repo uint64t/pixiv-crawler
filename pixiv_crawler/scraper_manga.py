@@ -595,9 +595,9 @@ def resetAndReturnFilenameList(func):
         return_list = []
         for item in ["tag", "artist_id", "urls"]:
             try:
-                tag = bound_arguments.arguments["tag"]
+                argument = bound_arguments.arguments[item]
 
-                func(tag=tag,
+                func(argument,
                      pic_num=pic_num,
                      deep_into_manga=deep_into_manga,
                      add_classname_in_path=add_classname_in_path)
